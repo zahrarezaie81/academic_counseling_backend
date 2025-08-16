@@ -87,7 +87,7 @@ class Counselor(Base):
     appointments = relationship("Appointment", back_populates="counselor", cascade="all, delete-orphan", passive_deletes=True)
     feedbacks = relationship("Feedback", back_populates="counselor", cascade="all, delete-orphan", passive_deletes=True)
     study_plans = relationship("StudyPlan", back_populates="counselor", cascade="all, delete-orphan", passive_deletes=True)
-    recommendations = relationship("Recommendation", back_populates="counselor", cascade="all, delete-orphan", passive_deletes=True)
+    # recommendations = relationship("Recommendation", back_populates="counselor", cascade="all, delete-orphan", passive_deletes=True)
 
 # ----- STUDY PLAN -----
 
@@ -179,11 +179,11 @@ class Recommendation(Base):
 
     recommendation_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     student_id = Column(Integer, ForeignKey("students.student_id", ondelete="CASCADE"), nullable=False)
-    counselor_id = Column(Integer, ForeignKey("counselors.counselor_id", ondelete="CASCADE"), nullable=False)
+    # counselor_id = Column(Integer, ForeignKey("counselors.counselor_id", ondelete="CASCADE"), nullable=False)
     suggested_course = Column(String, nullable=True)
 
     student = relationship("Student", back_populates="recommendations", passive_deletes=True)
-    counselor = relationship("Counselor", back_populates="recommendations", passive_deletes=True)
+    # counselor = relationship("Counselor", back_populates="recommendations", passive_deletes=True)
 
 # ----- FEEDBACK -----
 
