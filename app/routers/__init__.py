@@ -1,6 +1,5 @@
 from .authentication import *
 from .students import *
-from .user import *
 from .counselors import *
 from .appointments import *
 from .time_slots import *
