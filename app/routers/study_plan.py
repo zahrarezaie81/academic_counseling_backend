@@ -89,11 +89,11 @@ def create_recommendation_for_student(
     if not counselor:
         raise HTTPException(403, "Only counselors can recommend")
 
-    rec = crud.create_recommendation(db, data.student_id, counselor.id, data.suggested_course)
+    rec = crud.create_recommendation(db, data.student_id, data.suggested_course)
     return {
-        "recommendation_id": rec.id,
+        "recommendation_id": rec.recommendation_id,
+        "student_id": rec.student_id,
         "suggested_course": rec.suggested_course,
-        "student_id": rec.student_id
     }
 
 @router.get("/study-plan/counselor/history/{student_id}")
