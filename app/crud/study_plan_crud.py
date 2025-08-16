@@ -222,10 +222,9 @@ def set_plan_score(db: Session, plan_id: int, score: int):
     return {"detail": "Score saved"}
 
 
-def create_recommendation(db: Session, student_id: int, counselor_id: int, suggested_course: str):
+def create_recommendation(db: Session, student_id: int, suggested_course: str):
     recommendation = models.Recommendation(
         student_id=student_id,
-        counselor_id=counselor_id,
         suggested_course=suggested_course
     )
     db.add(recommendation)
