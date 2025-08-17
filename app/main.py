@@ -31,8 +31,8 @@ if not origins:
     origins = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://gleeful-cat-071ccc.netlify.app/"
-
+        "https://gleeful-cat-071ccc.netlify.app/",
+        "https://academic-counseling-system.netlify.app/"
     ]
 
 allow_all = (len(origins) == 1 and origins[0] == "*")
